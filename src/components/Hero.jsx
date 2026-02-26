@@ -97,7 +97,7 @@ export function Hero() {
                      gap="8"
                      align="center"
                      justify="center"
-                     h={{ base: "55vh", sm: "55vh" }}
+                     minH={{ base: "55vh", sm: "55vh" }}
                   >
                      <MotionDiv variants={contentVariants}>
                         <MotionBox
@@ -183,7 +183,7 @@ export function Hero() {
                                  href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
                               >
                                  <AppleIcon />
-                                 Download for macOS
+                                 Download Now
                               </Button>
                            </MotionDiv>
 
@@ -201,7 +201,7 @@ export function Hero() {
                                  href="https://cellpowered.lemonsqueezy.com/checkout"
                               >
                                  <IconShoppingCart />
-                                 Buy Now
+                                 Purchase
                               </Button>
                            </MotionDiv>
                         </Stack>

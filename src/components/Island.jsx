@@ -60,12 +60,7 @@ export function Island() {
                   href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
                >
                   <AppleIcon />
-                  <Box display={{ base: "none", sm: "block" }}>
-                     Download Now
-                  </Box>
-                  <Box display={{ base: "block", sm: "none" }}>
-                     Download
-                  </Box>
+                  Download
                </Button>
             </Flex>
          </Box>
