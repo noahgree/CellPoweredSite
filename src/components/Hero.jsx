@@ -165,7 +165,7 @@ export function Hero() {
 
                      <MotionDiv variants={contentVariants}>
                         <Stack
-                           direction={{ base: "column", sm: "row" }}
+                           direction="row"
                            gap="3"
                            align="center"
                         >
@@ -183,7 +183,7 @@ export function Hero() {
                                  href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
                               >
                                  <AppleIcon />
-                                 Download Now
+                                 Download
                               </Button>
                            </MotionDiv>
 
