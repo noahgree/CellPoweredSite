@@ -15,7 +15,7 @@ export function Island() {
          left="0"
          right="0"
          zIndex="1000"
-         maxW="7xl"
+         maxW="5xl"
          mx="auto"
       >
          <Box

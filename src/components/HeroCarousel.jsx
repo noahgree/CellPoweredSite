@@ -1,11 +1,11 @@
-import { Box, Marquee } from "@chakra-ui/react";
+import { Box, Carousel } from "@chakra-ui/react";
 import { useColorModeValue } from "@/components/ui/color-mode";
 
 const backgroundSoloImages = import.meta.glob(
    "../assets/background-solo/*.{png,jpg,jpeg,webp,svg}", { eager: true, import: "default" }
 );
 
-export function HeroMarquee() {
+export function HeroCarousel() {
    const surfaceBg = useColorModeValue("white", "gray.950");
    const surfaceBorder = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
 
@@ -26,10 +26,10 @@ export function HeroMarquee() {
          borderRadius="lg"
          borderWidth="1px"
          borderColor={surfaceBorder}
-         height={{ base: "380px", md: "380px" }}
-         width="auto"
+         w="auto"
+         h="full"
          maxW="none"
-         objectFit="cover"
+         objectFit="contain"
       />
    );
 
@@ -39,18 +39,34 @@ export function HeroMarquee() {
          borderWidth="1px"
          borderColor={surfaceBorder}
          bg={surfaceBg}
+         overflow="hidden"
       >
-         <Marquee.Root reverse autoFill speed={30}>
-            <Marquee.Viewport>
-               <Marquee.Content py={{ base: "3", md: "4" }}>
-                  {items.map((item) => (
-                     <Marquee.Item key={item.name} px={{ base: "0.5rem", md: "0.75rem" }}>
-                        {imageNode(item)}
-                     </Marquee.Item>
-                  ))}
-               </Marquee.Content>
-            </Marquee.Viewport>
-         </Marquee.Root>
+         <Carousel.Root
+            slideCount={items.length}
+            autoSize
+            slidesPerPage={1}
+            slidesPerMove={1}
+            allowMouseDrag
+            spacing="8px"
+            m="12px"
+         >
+            <Carousel.ItemGroup
+               h={{ base: "440px", sm: "500px" }}
+               rounded="lg"
+            >
+               {items.map((item, index) => (
+                  <Carousel.Item
+                     key={item.name}
+                     index={index}
+                     w="auto"
+                     h="full"
+                     flex="0 0 auto"
+                  >
+                     {imageNode(item)}
+                  </Carousel.Item>
+               ))}
+            </Carousel.ItemGroup>
+         </Carousel.Root>
       </Box>
    );
 }

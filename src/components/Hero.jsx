@@ -3,7 +3,7 @@ import { AppleIcon } from "./Icons"
 import { IconShoppingCart } from "@tabler/icons-react"
 import { motion } from "framer-motion";
 import { useColorModeValue } from "@/components/ui/color-mode";
-import { HeroMarquee } from "@/components/HeroMarquee";
+import { HeroCarousel } from "@/components/HeroCarousel";
 import iconDark from "../assets/iconDark.png"
 
 const MotionDiv = motion.div;
@@ -209,7 +209,7 @@ export function Hero() {
                   minW="0"
                   w="full"
                >
-                  <HeroMarquee />
+                  <HeroCarousel />
                </Box>
             </Stack>
          </Container>
