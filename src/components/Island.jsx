@@ -46,7 +46,9 @@ export function Island() {
                <Button
                   as="a"
                   size="sm"
-                  variant="surface"
+                  variant="subtle"
+                  bg="whiteAlpha.100"
+                  _hover={{ bg: "whiteAlpha.300/80" }}
                   rounded="full"
                   href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
                >
