@@ -90,11 +90,15 @@ export function Hero() {
             <Stack
                gap={{ base: "12", lg: "16" }}
                align="center"
-               justify="space-evenly"
-               h={{ base: "60vh", sm: "75vh" }}
+               justify="space-between"
             >
                <MotionDiv variants={stagger} initial="hidden" animate="show">
-                  <Stack gap="8" align="center">
+                  <Stack
+                     gap="8"
+                     align="center"
+                     justify="center"
+                     h={{ base: "55vh", sm: "55vh" }}
+                  >
                      <MotionDiv variants={contentVariants}>
                         <MotionBox
                            initial={{ opacity: 0, y: 18, scale: 0.98 }}

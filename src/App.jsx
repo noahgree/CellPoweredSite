@@ -7,6 +7,7 @@ function App() {
       <Box bg="bg" color="fg" maxW="5xl" m="auto">
          <Island />
          <Hero />
+         <Box h="20px"/>
       </Box>
    );
 }
