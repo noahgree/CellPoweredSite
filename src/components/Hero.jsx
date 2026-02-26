@@ -104,7 +104,7 @@ export function Hero() {
                         >
                            <Image
                               src={iconDark}
-                              boxSize="150px"
+                              boxSize={{base: "100px", sm: "150px"}}
                               rotate="5"
                            />
                         </MotionBox>
@@ -205,7 +205,12 @@ export function Hero() {
                   </Stack>
                </MotionDiv>
 
-               <HeroMarquee />
+               <Box
+                  minW="0"
+                  w="full"
+               >
+                  <HeroMarquee />
+               </Box>
             </Stack>
          </Container>
       </Box>

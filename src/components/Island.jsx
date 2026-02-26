@@ -45,7 +45,7 @@ export function Island() {
                <Image
                   display={{ base: "block", sm: "none" }}
                   src={iconDark}
-                  boxSize="40px"
+                  boxSize="32px"
                />
 
                <Box flex="1" />
