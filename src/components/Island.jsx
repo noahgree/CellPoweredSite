@@ -1,5 +1,6 @@
-import { Box, Flex, Text, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Button, Container } from "@chakra-ui/react";
 import { useColorModeValue } from "@/components/ui/color-mode";
+import { AppleIcon } from "./Icons";
 
 export function Island() {
    const surfaceBorder = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
@@ -7,26 +8,30 @@ export function Island() {
    const textColor = useColorModeValue("gray.900", "white");
 
    return (
-      <Box
+      <Container
          position="fixed"
          top="4"
          left="0"
          right="0"
          zIndex="1000"
-         px="4"
+         maxW="7xl"
+         mx="auto"
       >
          <Box
-            w="full"
-            maxW="5xl"
-            mx="auto"
             borderRadius="full"
             borderWidth="1px"
             borderColor={surfaceBorder}
             bg={bg}
             backdropFilter="blur(30px)"
-            boxShadow="sm"
          >
-            <Flex align="center" justify="space-between" px="5" py="3" gap="4">
+            <Flex
+               align="center"
+               justify="space-between"
+               px="5"
+               py="3"
+               gap="4"
+               overflow="hidden"
+            >
                <Text
                   fontStretch="extra-expanded"
                   fontSize={{ base: "md", md: "lg" }}
@@ -38,11 +43,18 @@ export function Island() {
 
                <Box flex="1" />
 
-               <Button size="sm" variant="outline">
-                  Download
+               <Button
+                  as="a"
+                  size="sm"
+                  variant="surface"
+                  rounded="full"
+                  href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
+               >
+                  <AppleIcon />
+                  Download Now
                </Button>
             </Flex>
          </Box>
-      </Box>
+      </Container>
    );
 }

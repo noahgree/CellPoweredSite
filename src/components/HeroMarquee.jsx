@@ -2,7 +2,7 @@ import { Box, Marquee } from "@chakra-ui/react";
 import { useColorModeValue } from "@/components/ui/color-mode";
 
 const backgroundSoloImages = import.meta.glob(
-   "../assets/background-solo/*.{png,jpg,jpeg,webp,svg}", { eager: true, import: "default", }
+   "../assets/background-solo/*.{png,jpg,jpeg,webp,svg}", { eager: true, import: "default" }
 );
 
 export function HeroMarquee() {
@@ -35,9 +35,6 @@ export function HeroMarquee() {
 
    return (
       <Box
-         position="relative"
-         width="full"
-         overflow="hidden"
          borderRadius="xl"
          borderWidth="1px"
          borderColor={surfaceBorder}

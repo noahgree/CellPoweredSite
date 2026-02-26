@@ -1,7 +1,10 @@
-import { Box, Button, Container, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Stack, Text, Image } from "@chakra-ui/react";
+import { AppleIcon } from "./Icons"
+import { IconShoppingCart } from "@tabler/icons-react"
 import { motion } from "framer-motion";
 import { useColorModeValue } from "@/components/ui/color-mode";
 import { HeroMarquee } from "@/components/HeroMarquee";
+import iconDark from "../assets/iconDark.png"
 
 const MotionDiv = motion.div;
 const MotionBox = motion(Box);
@@ -32,7 +35,7 @@ export function Hero() {
    const mutedText = useColorModeValue("gray.600", "gray.300");
 
    return (
-      <Box position="relative" overflowX="hidden">
+      <Box>
          <Box
             aria-hidden
             position="fixed"
@@ -85,19 +88,28 @@ export function Hero() {
             position="relative"
          >
             <Stack
-               c
                gap={{ base: "12", lg: "16" }}
-               align="left"
-               justify="space-between"
+               align="center"
+               justify="space-evenly"
+               h={{ base: "60vh", sm: "75vh" }}
             >
                <MotionDiv variants={stagger} initial="hidden" animate="show">
-                  <Stack gap="6">
+                  <Stack gap="8" align="center">
+                     <MotionDiv variants={contentVariants}>
+                        <Image
+                           src={iconDark}
+                           boxSize="150px"
+                           rotate="5"
+                        />
+                     </MotionDiv>
+
                      <MotionDiv variants={contentVariants}>
                         <Text
                            fontSize={{ base: "4xl", xs: "5xl", sm: "6xl", md: "7xl" }}
                            fontWeight="extrabold"
                            fontStretch="extra-expanded"
                            lineHeight="1.3"
+                           textAlign="center"
                         >
                            Cell Powered
                         </Text>
@@ -133,8 +145,9 @@ export function Hero() {
                            maxW="lg"
                            fontSize={{ base: "lg", md: "xl" }}
                            color={mutedText}
+                           textAlign="center"
                         >
-                           Monitor charge cycles, battery temperature, and real-time
+                           Monitor battery state, temperature, and real-time
                            power stats without leaving your workflow.
                         </Text>
                      </MotionDiv>
@@ -143,6 +156,7 @@ export function Hero() {
                         <Stack
                            direction={{ base: "column", sm: "row" }}
                            gap="3"
+                           align="center"
                         >
                            <MotionDiv
                               whileHover={{ y: -2, scale: 1.01 }}
@@ -150,7 +164,14 @@ export function Hero() {
                               transition={{ type: "spring", stiffness: 260, damping: 20 }}
                               style={{ display: "inline-block" }}
                            >
-                              <Button size="lg" colorPalette="white">
+                              <Button
+                                 as="a"
+                                 size="xl"
+                                 colorPalette="bg.inverted"
+                                 rounded="full"
+                                 href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
+                              >
+                                 <AppleIcon />
                                  Download for macOS
                               </Button>
                            </MotionDiv>
@@ -161,7 +182,14 @@ export function Hero() {
                               transition={{ type: "spring", stiffness: 260, damping: 22 }}
                               style={{ display: "inline-block" }}
                            >
-                              <Button size="lg" variant="outline">
+                              <Button
+                                 as="a"
+                                 size="xl"
+                                 variant="outline"
+                                 rounded="full"
+                                 href="https://cellpowered.lemonsqueezy.com/checkout"
+                              >
+                                 <IconShoppingCart />
                                  Buy Now
                               </Button>
                            </MotionDiv>
@@ -177,7 +205,6 @@ export function Hero() {
                   whileHover={{ y: -6 }}
                   minW="0"
                   w="full"
-                  maxW="6xl"
                >
                   <HeroMarquee />
                </MotionBox>

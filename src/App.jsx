@@ -4,7 +4,7 @@ import { Island } from "@/components/Island"
 
 function App() {
    return (
-      <Box bg="bg" color="fg" direction="column">
+      <Box bg="bg" color="fg" maxW="7xl" m="auto">
          <Island />
          <Hero />
       </Box>
