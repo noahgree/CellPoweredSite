@@ -96,11 +96,18 @@ export function Hero() {
                <MotionDiv variants={stagger} initial="hidden" animate="show">
                   <Stack gap="8" align="center">
                      <MotionDiv variants={contentVariants}>
-                        <Image
-                           src={iconDark}
-                           boxSize="150px"
-                           rotate="5"
-                        />
+                        <MotionBox
+                           initial={{ opacity: 0, y: 18, scale: 0.98 }}
+                           animate={{ opacity: 1, y: 0, scale: 1 }}
+                           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+                           whileHover={{ y: -6 }}
+                        >
+                           <Image
+                              src={iconDark}
+                              boxSize="150px"
+                              rotate="5"
+                           />
+                        </MotionBox>
                      </MotionDiv>
 
                      <MotionDiv variants={contentVariants}>
@@ -198,16 +205,7 @@ export function Hero() {
                   </Stack>
                </MotionDiv>
 
-               <MotionBox
-                  initial={{ opacity: 0, y: 18, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-                  whileHover={{ y: -6 }}
-                  minW="0"
-                  w="full"
-               >
-                  <HeroMarquee />
-               </MotionBox>
+               <HeroMarquee />
             </Stack>
          </Container>
       </Box>

@@ -1,6 +1,7 @@
-import { Box, Flex, Text, Button, Container } from "@chakra-ui/react";
+import { Box, Flex, Text, Button, Container, Image } from "@chakra-ui/react";
 import { useColorModeValue } from "@/components/ui/color-mode";
 import { AppleIcon } from "./Icons";
+import iconDark from "../assets/iconDark.png"
 
 export function Island() {
    const surfaceBorder = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
@@ -22,7 +23,7 @@ export function Island() {
             borderWidth="1px"
             borderColor={surfaceBorder}
             bg={bg}
-            backdropFilter="blur(30px)"
+            backdropFilter="blur(40px)"
          >
             <Flex
                align="center"
@@ -33,6 +34,7 @@ export function Island() {
                overflow="hidden"
             >
                <Text
+                  display={{ base: "none", sm: "block" }}
                   fontStretch="extra-expanded"
                   fontSize={{ base: "md", md: "lg" }}
                   fontWeight="extrabold"
@@ -40,6 +42,11 @@ export function Island() {
                >
                   Cell Powered
                </Text>
+               <Image
+                  display={{ base: "block", sm: "none" }}
+                  src={iconDark}
+                  boxSize="40px"
+               />
 
                <Box flex="1" />
 
@@ -53,7 +60,12 @@ export function Island() {
                   href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
                >
                   <AppleIcon />
-                  Download Now
+                  <Box display={{ base: "none", sm: "block" }}>
+                     Download Now
+                  </Box>
+                  <Box display={{ base: "block", sm: "none" }}>
+                     Download
+                  </Box>
                </Button>
             </Flex>
          </Box>
