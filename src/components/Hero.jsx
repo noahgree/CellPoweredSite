@@ -4,7 +4,7 @@ import { IconShoppingCart } from "@tabler/icons-react"
 import { motion } from "framer-motion";
 import { useColorModeValue } from "@/components/ui/color-mode";
 import { HeroCarousel } from "@/components/HeroCarousel";
-import iconDark from "../assets/iconDark.png"
+import iconDark from "/iconDark.png"
 
 const MotionDiv = motion.div;
 const MotionBox = motion(Box);

@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Button, Container, Image } from "@chakra-ui/react";
 import { useColorModeValue } from "@/components/ui/color-mode";
 import { AppleIcon } from "./Icons";
-import iconDark from "../assets/iconDark.png"
+import iconDark from "/iconDark.png"
 
 export function Island() {
    const surfaceBorder = useColorModeValue("blackAlpha.200", "whiteAlpha.200");
