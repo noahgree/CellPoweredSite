@@ -16,7 +16,7 @@ export function Island() {
          right="0"
          zIndex="1000"
          maxW="5xl"
-         mx="auto"
+         m="auto"
       >
          <Box
             borderRadius="full"

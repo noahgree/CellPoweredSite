@@ -35,7 +35,10 @@ export function Hero() {
    const mutedText = useColorModeValue("gray.600", "gray.300");
 
    return (
-      <Box>
+      <Box
+         maxW="5xl"
+         m="auto"
+      >
          <Box
             aria-hidden
             position="fixed"
@@ -183,25 +186,7 @@ export function Hero() {
                                  href="https://github.com/noahgree/cellpowered-updates/releases/latest/download/Cell.Powered.dmg"
                               >
                                  <AppleIcon />
-                                 Download
-                              </Button>
-                           </MotionDiv>
-
-                           <MotionDiv
-                              whileHover={{ y: -2 }}
-                              whileTap={{ scale: 0.99 }}
-                              transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                              style={{ display: "inline-block" }}
-                           >
-                              <Button
-                                 as="a"
-                                 size="xl"
-                                 variant="outline"
-                                 rounded="full"
-                                 href="https://cellpowered.lemonsqueezy.com/checkout"
-                              >
-                                 <IconShoppingCart />
-                                 Purchase
+                                 Download Now
                               </Button>
                            </MotionDiv>
                         </Stack>
